@@ -35,7 +35,7 @@ class SimpleHashMap {
 
         auto it = bucket.find(key);
         if (it == bucket.end()) return std::nullopt;
-        return it->second; // returns a copy; fine for Milestone 1
+        return it->second; 
     }
 
     bool add(const K& key, V value) {
@@ -46,6 +46,7 @@ class SimpleHashMap {
         if (!inserted) {
             it->second = std::move(value);
         }
+
         return inserted;
     }
 
