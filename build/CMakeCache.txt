@@ -14,6 +14,63 @@
 # EXTERNAL cache entries
 ########################
 
+//Build a 32 bit version of the library.
+BENCHMARK_BUILD_32_BITS:BOOL=OFF
+
+//Flags used by the C++ compiler during coverage builds.
+BENCHMARK_CXX_FLAGS_COVERAGE:STRING=-g
+
+//Allow the downloading and in-tree building of unmet dependencies
+BENCHMARK_DOWNLOAD_DEPENDENCIES:BOOL=OFF
+
+//Enable building and running the assembly tests
+BENCHMARK_ENABLE_ASSEMBLY_TESTS:BOOL=OFF
+
+//Build documentation with Doxygen.
+BENCHMARK_ENABLE_DOXYGEN:BOOL=OFF
+
+//Enable the use of exceptions in the benchmark library.
+BENCHMARK_ENABLE_EXCEPTIONS:BOOL=ON
+
+//Enable building the unit tests which depend on gtest
+BENCHMARK_ENABLE_GTEST_TESTS:BOOL=OFF
+
+//Enable installation of benchmark. (Projects embedding benchmark
+// may want to turn this OFF.)
+BENCHMARK_ENABLE_INSTALL:BOOL=ON
+
+//Enable performance counters provided by libpfm
+BENCHMARK_ENABLE_LIBPFM:BOOL=OFF
+
+//Enable link time optimisation of the benchmark library.
+BENCHMARK_ENABLE_LTO:BOOL=OFF
+
+//Enable testing of the benchmark library.
+BENCHMARK_ENABLE_TESTING:BOOL=OFF
+
+//Build Release candidates with -Werror.
+BENCHMARK_ENABLE_WERROR:BOOL=ON
+
+//Flags used for linking binaries during coverage builds.
+BENCHMARK_EXE_LINKER_FLAGS_COVERAGE:STRING=
+
+//Build Release candidates with -Werror regardless of compiler
+// issues.
+BENCHMARK_FORCE_WERROR:BOOL=OFF
+
+//Enable installation of documentation.
+BENCHMARK_INSTALL_DOCS:BOOL=ON
+
+//Flags used by the shared libraries linker during coverage builds.
+BENCHMARK_SHARED_LINKER_FLAGS_COVERAGE:STRING=
+
+//Use bundled GoogleTest. If disabled, the find_package(GTest)
+// will be used.
+BENCHMARK_USE_BUNDLED_GTEST:BOOL=ON
+
+//Build and test using libc++ as the standard library.
+BENCHMARK_USE_LIBCXX:BOOL=OFF
+
 //Build the testing tree.
 BUILD_TESTING:BOOL=ON
 
@@ -461,6 +518,9 @@ CTEST_SUBMIT_RETRY_COUNT:STRING=3
 //How long to wait between timed-out CTest submissions.
 CTEST_SUBMIT_RETRY_DELAY:STRING=5
 
+//OFF
+CXXFEATURECHECK_DEBUG:BOOL=OFF
+
 //Dependencies for the target
 Catch2WithMain_LIB_DEPENDS:STATIC=general;Catch2;
 
@@ -490,11 +550,18 @@ FETCHCONTENT_QUIET:BOOL=ON
 // for Catch2
 FETCHCONTENT_SOURCE_DIR_CATCH2:PATH=
 
+//When not empty, overrides where to find pre-populated content
+// for googlebenchmark
+FETCHCONTENT_SOURCE_DIR_GOOGLEBENCHMARK:PATH=
+
 //Enables UPDATE_DISCONNECTED behavior for all content population
 FETCHCONTENT_UPDATES_DISCONNECTED:BOOL=OFF
 
 //Enables UPDATE_DISCONNECTED behavior just for population of Catch2
 FETCHCONTENT_UPDATES_DISCONNECTED_CATCH2:BOOL=OFF
+
+//Enables UPDATE_DISCONNECTED behavior just for population of googlebenchmark
+FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLEBENCHMARK:BOOL=OFF
 
 //Path to a program.
 GITCOMMAND:FILEPATH=/usr/bin/git
@@ -533,6 +600,15 @@ StrataDB_IS_TOP_LEVEL:STATIC=ON
 StrataDB_SOURCE_DIR:STATIC=/Users/michaelspeckhart/Developer/Projects/StrataDB
 
 //Value Computed by CMake
+benchmark_BINARY_DIR:STATIC=/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-build
+
+//Value Computed by CMake
+benchmark_IS_TOP_LEVEL:STATIC=OFF
+
+//Value Computed by CMake
+benchmark_SOURCE_DIR:STATIC=/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src
+
+//Value Computed by CMake
 stratakv_BINARY_DIR:STATIC=/Users/michaelspeckhart/Developer/Projects/StrataDB/build
 
 //Value Computed by CMake
@@ -546,6 +622,12 @@ stratakv_SOURCE_DIR:STATIC=/Users/michaelspeckhart/Developer/Projects/StrataDB
 # INTERNAL cache entries
 ########################
 
+//ADVANCED property for variable: BENCHMARK_CXX_FLAGS_COVERAGE
+BENCHMARK_CXX_FLAGS_COVERAGE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BENCHMARK_EXE_LINKER_FLAGS_COVERAGE
+BENCHMARK_EXE_LINKER_FLAGS_COVERAGE-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: BENCHMARK_SHARED_LINKER_FLAGS_COVERAGE
+BENCHMARK_SHARED_LINKER_FLAGS_COVERAGE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CATCH_CONFIG_ANDROID_LOGWRITE
 CATCH_CONFIG_ANDROID_LOGWRITE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CATCH_CONFIG_BAZEL_SUPPORT
@@ -720,6 +802,8 @@ CMAKE_GENERATOR_INSTANCE:INTERNAL=
 CMAKE_GENERATOR_PLATFORM:INTERNAL=
 //Name of generator toolset.
 CMAKE_GENERATOR_TOOLSET:INTERNAL=
+//Test CMAKE_HAVE_LIBC_PTHREAD
+CMAKE_HAVE_LIBC_PTHREAD:INTERNAL=1
 //Source directory with the top level CMakeLists.txt file for this
 // project
 CMAKE_HOME_DIRECTORY:INTERNAL=/Users/michaelspeckhart/Developer/Projects/StrataDB
@@ -776,7 +860,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=4
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=7
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP
@@ -821,6 +905,18 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Result of TRY_COMPILE
+COMPILE_HAVE_GNU_POSIX_REGEX:INTERNAL=FALSE
+//Result of TRY_COMPILE
+COMPILE_HAVE_POSIX_REGEX:INTERNAL=TRUE
+//Result of TRY_COMPILE
+COMPILE_HAVE_PTHREAD_AFFINITY:INTERNAL=FALSE
+//Result of TRY_COMPILE
+COMPILE_HAVE_STD_REGEX:INTERNAL=TRUE
+//Result of TRY_COMPILE
+COMPILE_HAVE_STEADY_CLOCK:INTERNAL=TRUE
+//Result of TRY_COMPILE
+COMPILE_HAVE_THREAD_SAFETY_ATTRIBUTES:INTERNAL=TRUE
 //ADVANCED property for variable: COVERAGE_COMMAND
 COVERAGE_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: COVERAGE_EXTRA_FLAGS
@@ -835,18 +931,68 @@ Catch2WithMain_GUID_CMAKE:INTERNAL=8bd3552a-2cfb-4a59-ab15-2031b97ada1e
 Catch2_GUID_CMAKE:INTERNAL=8d538cbe-01bf-4a2e-a98a-6c368fdf13d7
 //ADVANCED property for variable: DART_TESTING_TIMEOUT
 DART_TESTING_TIMEOUT-ADVANCED:INTERNAL=1
+//Details about finding Git
+FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[/usr/bin/git][v2.50.1 (Apple Git-155)()]
+//Details about finding Threads
+FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
 //ADVANCED property for variable: GITCOMMAND
 GITCOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
+//Test HAVE_CXX_FLAG_COVERAGE
+HAVE_CXX_FLAG_COVERAGE:INTERNAL=1
+//Test HAVE_CXX_FLAG_FSTRICT_ALIASING
+HAVE_CXX_FLAG_FSTRICT_ALIASING:INTERNAL=1
+//Test HAVE_CXX_FLAG_PEDANTIC
+HAVE_CXX_FLAG_PEDANTIC:INTERNAL=1
+//Test HAVE_CXX_FLAG_PEDANTIC_ERRORS
+HAVE_CXX_FLAG_PEDANTIC_ERRORS:INTERNAL=1
+//Test HAVE_CXX_FLAG_WALL
+HAVE_CXX_FLAG_WALL:INTERNAL=1
+//Test HAVE_CXX_FLAG_WCONVERSION
+HAVE_CXX_FLAG_WCONVERSION:INTERNAL=1
+//Test HAVE_CXX_FLAG_WD654
+HAVE_CXX_FLAG_WD654:INTERNAL=
+//Test HAVE_CXX_FLAG_WERROR
+HAVE_CXX_FLAG_WERROR:INTERNAL=1
+//Test HAVE_CXX_FLAG_WEXTRA
+HAVE_CXX_FLAG_WEXTRA:INTERNAL=1
+//Test HAVE_CXX_FLAG_WFLOAT_EQUAL
+HAVE_CXX_FLAG_WFLOAT_EQUAL:INTERNAL=1
+//Test HAVE_CXX_FLAG_WNO_DEPRECATED
+HAVE_CXX_FLAG_WNO_DEPRECATED:INTERNAL=1
+//Test HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS
+HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS:INTERNAL=1
+//Test HAVE_CXX_FLAG_WOLD_STYLE_CAST
+HAVE_CXX_FLAG_WOLD_STYLE_CAST:INTERNAL=1
+//Test HAVE_CXX_FLAG_WSHADOW
+HAVE_CXX_FLAG_WSHADOW:INTERNAL=1
+//Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32
+HAVE_CXX_FLAG_WSHORTEN_64_TO_32:INTERNAL=1
+//Test HAVE_CXX_FLAG_WSTRICT_ALIASING
+HAVE_CXX_FLAG_WSTRICT_ALIASING:INTERNAL=1
+//Test HAVE_CXX_FLAG_WSUGGEST_OVERRIDE
+HAVE_CXX_FLAG_WSUGGEST_OVERRIDE:INTERNAL=1
+//Test HAVE_CXX_FLAG_WTHREAD_SAFETY
+HAVE_CXX_FLAG_WTHREAD_SAFETY:INTERNAL=1
 //Test HAVE_FLAG__ffile_prefix_map__Users_michaelspeckhart_Developer_Projects_StrataDB_build__deps_catch2_src__
 HAVE_FLAG__ffile_prefix_map__Users_michaelspeckhart_Developer_Projects_StrataDB_build__deps_catch2_src__:INTERNAL=1
+//Have library rt
+HAVE_LIB_RT:INTERNAL=
 //ADVANCED property for variable: MAKECOMMAND
 MAKECOMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_COMMAND
 MEMORYCHECK_COMMAND-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: MEMORYCHECK_SUPPRESSIONS_FILE
 MEMORYCHECK_SUPPRESSIONS_FILE-ADVANCED:INTERNAL=1
+//Result of try_run()
+RUN_HAVE_POSIX_REGEX:INTERNAL=0
+//Result of try_run()
+RUN_HAVE_STD_REGEX:INTERNAL=0
+//Result of try_run()
+RUN_HAVE_STEADY_CLOCK:INTERNAL=0
+//Result of try_run()
+RUN_HAVE_THREAD_SAFETY_ATTRIBUTES:INTERNAL=0
 //ADVANCED property for variable: SITE
 SITE-ADVANCED:INTERNAL=1
 //Catch2 full path to CatchAddTests.cmake helper file

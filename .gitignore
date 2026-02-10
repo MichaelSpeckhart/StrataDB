@@ -65,3 +65,4 @@ Makefile
 *.so
 *.dylib
 *.exe
+*.trace/*

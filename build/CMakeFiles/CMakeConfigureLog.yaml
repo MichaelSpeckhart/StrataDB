@@ -2238,3 +2238,950 @@ events:
       CMAKE_SYSTEM_APPBUNDLE_PATH:
         - "/Applications"
 ...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/CheckLibraryExists.cmake:154 (try_compile)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:135 (check_library_exists)"
+    checks:
+      - "Looking for shm_open in rt"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-v3T3DJ"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-v3T3DJ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_LIB_RT"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-v3T3DJ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_c7766/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_c7766.dir/build.make CMakeFiles/cmTC_c7766.dir/build
+        Building CXX object CMakeFiles/cmTC_c7766.dir/CheckFunctionExists.cxx.o
+        /usr/bin/clang++   -DCHECK_FUNCTION_EXISTS=shm_open -std=gnu++20 -arch arm64 -MD -MT CMakeFiles/cmTC_c7766.dir/CheckFunctionExists.cxx.o -MF CMakeFiles/cmTC_c7766.dir/CheckFunctionExists.cxx.o.d -o CMakeFiles/cmTC_c7766.dir/CheckFunctionExists.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-v3T3DJ/CheckFunctionExists.cxx
+        Linking CXX executable cmTC_c7766
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c7766.dir/link.txt --verbose=1
+        ld: library 'rt' not found
+        clang++: error: linker command failed with exit code 1 (use -v to see invocation)
+        /usr/bin/clang++  -DCHECK_FUNCTION_EXISTS=shm_open -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_c7766.dir/CheckFunctionExists.cxx.o -o cmTC_c7766  -lrt
+        make[1]: *** [cmTC_c7766] Error 1
+        make: *** [cmTC_c7766/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:188 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WALL"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-8qMuil"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-8qMuil"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WALL"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-8qMuil'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_eae4d/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_eae4d.dir/build.make CMakeFiles/cmTC_eae4d.dir/build
+        Building CXX object CMakeFiles/cmTC_eae4d.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WALL  -Wall -std=c++17 -arch arm64   -Wall -MD -MT CMakeFiles/cmTC_eae4d.dir/src.cxx.o -MF CMakeFiles/cmTC_eae4d.dir/src.cxx.o.d -o CMakeFiles/cmTC_eae4d.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-8qMuil/src.cxx
+        Linking CXX executable cmTC_eae4d
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_eae4d.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_eae4d.dir/src.cxx.o -o cmTC_eae4d
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:189 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WEXTRA"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-zNve2o"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-zNve2o"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WEXTRA"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-zNve2o'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2e3ec/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2e3ec.dir/build.make CMakeFiles/cmTC_2e3ec.dir/build
+        Building CXX object CMakeFiles/cmTC_2e3ec.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WEXTRA  -Wall  -Wextra -std=c++17 -arch arm64   -Wextra -MD -MT CMakeFiles/cmTC_2e3ec.dir/src.cxx.o -MF CMakeFiles/cmTC_2e3ec.dir/src.cxx.o.d -o CMakeFiles/cmTC_2e3ec.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-zNve2o/src.cxx
+        Linking CXX executable cmTC_2e3ec
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2e3ec.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2e3ec.dir/src.cxx.o -o cmTC_2e3ec
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:190 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSHADOW"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-0rUFYv"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-0rUFYv"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSHADOW"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-0rUFYv'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4b19a/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4b19a.dir/build.make CMakeFiles/cmTC_4b19a.dir/build
+        Building CXX object CMakeFiles/cmTC_4b19a.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WSHADOW  -Wall  -Wextra  -Wshadow -std=c++17 -arch arm64   -Wshadow -MD -MT CMakeFiles/cmTC_4b19a.dir/src.cxx.o -MF CMakeFiles/cmTC_4b19a.dir/src.cxx.o.d -o CMakeFiles/cmTC_4b19a.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-0rUFYv/src.cxx
+        Linking CXX executable cmTC_4b19a
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4b19a.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4b19a.dir/src.cxx.o -o cmTC_4b19a
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:191 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WFLOAT_EQUAL"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-Hn5K47"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-Hn5K47"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WFLOAT_EQUAL"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-Hn5K47'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d1a16/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d1a16.dir/build.make CMakeFiles/cmTC_d1a16.dir/build
+        Building CXX object CMakeFiles/cmTC_d1a16.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WFLOAT_EQUAL  -Wall  -Wextra  -Wshadow  -Wfloat-equal -std=c++17 -arch arm64   -Wfloat-equal -MD -MT CMakeFiles/cmTC_d1a16.dir/src.cxx.o -MF CMakeFiles/cmTC_d1a16.dir/src.cxx.o.d -o CMakeFiles/cmTC_d1a16.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-Hn5K47/src.cxx
+        Linking CXX executable cmTC_d1a16
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d1a16.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d1a16.dir/src.cxx.o -o cmTC_d1a16
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:192 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WOLD_STYLE_CAST"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-xp0V4x"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-xp0V4x"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WOLD_STYLE_CAST"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-xp0V4x'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a35d7/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a35d7.dir/build.make CMakeFiles/cmTC_a35d7.dir/build
+        Building CXX object CMakeFiles/cmTC_a35d7.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WOLD_STYLE_CAST  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast -std=c++17 -arch arm64   -Wold-style-cast -MD -MT CMakeFiles/cmTC_a35d7.dir/src.cxx.o -MF CMakeFiles/cmTC_a35d7.dir/src.cxx.o.d -o CMakeFiles/cmTC_a35d7.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-xp0V4x/src.cxx
+        Linking CXX executable cmTC_a35d7
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a35d7.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_a35d7.dir/src.cxx.o -o cmTC_a35d7
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:193 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WCONVERSION"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-mpPaVk"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-mpPaVk"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WCONVERSION"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-mpPaVk'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_150f9/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_150f9.dir/build.make CMakeFiles/cmTC_150f9.dir/build
+        Building CXX object CMakeFiles/cmTC_150f9.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WCONVERSION  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion -std=c++17 -arch arm64   -Wconversion -MD -MT CMakeFiles/cmTC_150f9.dir/src.cxx.o -MF CMakeFiles/cmTC_150f9.dir/src.cxx.o.d -o CMakeFiles/cmTC_150f9.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-mpPaVk/src.cxx
+        Linking CXX executable cmTC_150f9
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_150f9.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_150f9.dir/src.cxx.o -o cmTC_150f9
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:195 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WERROR"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-W5bGmq"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-W5bGmq"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WERROR"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-W5bGmq'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_54b49/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_54b49.dir/build.make CMakeFiles/cmTC_54b49.dir/build
+        Building CXX object CMakeFiles/cmTC_54b49.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WERROR  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror -std=c++17 -arch arm64   -Werror -MD -MT CMakeFiles/cmTC_54b49.dir/src.cxx.o -MF CMakeFiles/cmTC_54b49.dir/src.cxx.o.d -o CMakeFiles/cmTC_54b49.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-W5bGmq/src.cxx
+        Linking CXX executable cmTC_54b49
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54b49.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_54b49.dir/src.cxx.o -o cmTC_54b49
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:199 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSUGGEST_OVERRIDE"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-mDmfSZ"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-mDmfSZ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSUGGEST_OVERRIDE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-mDmfSZ'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_d014e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_d014e.dir/build.make CMakeFiles/cmTC_d014e.dir/build
+        Building CXX object CMakeFiles/cmTC_d014e.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WSUGGEST_OVERRIDE  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override -std=c++17 -arch arm64   -Wsuggest-override -MD -MT CMakeFiles/cmTC_d014e.dir/src.cxx.o -MF CMakeFiles/cmTC_d014e.dir/src.cxx.o.d -o CMakeFiles/cmTC_d014e.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-mDmfSZ/src.cxx
+        Linking CXX executable cmTC_d014e
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d014e.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_d014e.dir/src.cxx.o -o cmTC_d014e
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:201 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_PEDANTIC"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-v8ZCsc"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-v8ZCsc"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_PEDANTIC"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-v8ZCsc'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_69ee9/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_69ee9.dir/build.make CMakeFiles/cmTC_69ee9.dir/build
+        Building CXX object CMakeFiles/cmTC_69ee9.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_PEDANTIC  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic -std=c++17 -arch arm64   -pedantic -MD -MT CMakeFiles/cmTC_69ee9.dir/src.cxx.o -MF CMakeFiles/cmTC_69ee9.dir/src.cxx.o.d -o CMakeFiles/cmTC_69ee9.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-v8ZCsc/src.cxx
+        Linking CXX executable cmTC_69ee9
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69ee9.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_69ee9.dir/src.cxx.o -o cmTC_69ee9
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:202 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_PEDANTIC_ERRORS"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-YTC3PP"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-YTC3PP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_PEDANTIC_ERRORS"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-YTC3PP'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_44b09/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_44b09.dir/build.make CMakeFiles/cmTC_44b09.dir/build
+        Building CXX object CMakeFiles/cmTC_44b09.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_PEDANTIC_ERRORS  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors -std=c++17 -arch arm64   -pedantic-errors -MD -MT CMakeFiles/cmTC_44b09.dir/src.cxx.o -MF CMakeFiles/cmTC_44b09.dir/src.cxx.o.d -o CMakeFiles/cmTC_44b09.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-YTC3PP/src.cxx
+        Linking CXX executable cmTC_44b09
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_44b09.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_44b09.dir/src.cxx.o -o cmTC_44b09
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:203 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSHORTEN_64_TO_32"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-XrlIDU"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-XrlIDU"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSHORTEN_64_TO_32"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-XrlIDU'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_1182f/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_1182f.dir/build.make CMakeFiles/cmTC_1182f.dir/build
+        Building CXX object CMakeFiles/cmTC_1182f.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WSHORTEN_64_TO_32  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32 -std=c++17 -arch arm64   -Wshorten-64-to-32 -MD -MT CMakeFiles/cmTC_1182f.dir/src.cxx.o -MF CMakeFiles/cmTC_1182f.dir/src.cxx.o.d -o CMakeFiles/cmTC_1182f.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-XrlIDU/src.cxx
+        Linking CXX executable cmTC_1182f
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1182f.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32 -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_1182f.dir/src.cxx.o -o cmTC_1182f
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:204 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_FSTRICT_ALIASING"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-ROqy9G"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-ROqy9G"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_FSTRICT_ALIASING"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-ROqy9G'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_b9047/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_b9047.dir/build.make CMakeFiles/cmTC_b9047.dir/build
+        Building CXX object CMakeFiles/cmTC_b9047.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_FSTRICT_ALIASING  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing -std=c++17 -arch arm64   -fstrict-aliasing -MD -MT CMakeFiles/cmTC_b9047.dir/src.cxx.o -MF CMakeFiles/cmTC_b9047.dir/src.cxx.o.d -o CMakeFiles/cmTC_b9047.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-ROqy9G/src.cxx
+        Linking CXX executable cmTC_b9047
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_b9047.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_b9047.dir/src.cxx.o -o cmTC_b9047
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:207 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-FrdryM"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-FrdryM"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-FrdryM'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_7089b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_7089b.dir/build.make CMakeFiles/cmTC_7089b.dir/build
+        Building CXX object CMakeFiles/cmTC_7089b.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WNO_DEPRECATED_DECLARATIONS  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations -std=c++17 -arch arm64   -Wno-deprecated-declarations -MD -MT CMakeFiles/cmTC_7089b.dir/src.cxx.o -MF CMakeFiles/cmTC_7089b.dir/src.cxx.o.d -o CMakeFiles/cmTC_7089b.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-FrdryM/src.cxx
+        Linking CXX executable cmTC_7089b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7089b.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_7089b.dir/src.cxx.o -o cmTC_7089b
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:217 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WNO_DEPRECATED"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-RVVLKI"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-RVVLKI"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WNO_DEPRECATED"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-RVVLKI'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_16be8/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_16be8.dir/build.make CMakeFiles/cmTC_16be8.dir/build
+        Building CXX object CMakeFiles/cmTC_16be8.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WNO_DEPRECATED  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated -std=c++17 -arch arm64   -Wno-deprecated -MD -MT CMakeFiles/cmTC_16be8.dir/src.cxx.o -MF CMakeFiles/cmTC_16be8.dir/src.cxx.o.d -o CMakeFiles/cmTC_16be8.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-RVVLKI/src.cxx
+        Linking CXX executable cmTC_16be8
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_16be8.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_16be8.dir/src.cxx.o -o cmTC_16be8
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:225 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WSTRICT_ALIASING"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-rmEBlO"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-rmEBlO"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WSTRICT_ALIASING"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-rmEBlO'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_2d9f6/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_2d9f6.dir/build.make CMakeFiles/cmTC_2d9f6.dir/build
+        Building CXX object CMakeFiles/cmTC_2d9f6.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WSTRICT_ALIASING  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing -std=c++17 -arch arm64   -Wstrict-aliasing -MD -MT CMakeFiles/cmTC_2d9f6.dir/src.cxx.o -MF CMakeFiles/cmTC_2d9f6.dir/src.cxx.o.d -o CMakeFiles/cmTC_2d9f6.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-rmEBlO/src.cxx
+        Linking CXX executable cmTC_2d9f6
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d9f6.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_2d9f6.dir/src.cxx.o -o cmTC_2d9f6
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:230 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WD654"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-RKTyDB"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-RKTyDB"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WD654"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-RKTyDB'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_6f459/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_6f459.dir/build.make CMakeFiles/cmTC_6f459.dir/build
+        Building CXX object CMakeFiles/cmTC_6f459.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WD654  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -wd654 -std=c++17 -arch arm64   -wd654 -MD -MT CMakeFiles/cmTC_6f459.dir/src.cxx.o -MF CMakeFiles/cmTC_6f459.dir/src.cxx.o.d -o CMakeFiles/cmTC_6f459.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-RKTyDB/src.cxx
+        clang++: error: unknown argument: '-wd654'
+        clang++: error: unknown argument: '-wd654'
+        make[1]: *** [CMakeFiles/cmTC_6f459.dir/src.cxx.o] Error 1
+        make: *** [cmTC_6f459/fast] Error 2
+        
+      exitCode: 2
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:231 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_WTHREAD_SAFETY"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-OyRxkH"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-OyRxkH"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_WTHREAD_SAFETY"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-OyRxkH'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_0adeb/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_0adeb.dir/build.make CMakeFiles/cmTC_0adeb.dir/build
+        Building CXX object CMakeFiles/cmTC_0adeb.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_WTHREAD_SAFETY  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety -std=c++17 -arch arm64   -Wthread-safety -MD -MT CMakeFiles/cmTC_0adeb.dir/src.cxx.o -MF CMakeFiles/cmTC_0adeb.dir/src.cxx.o.d -o CMakeFiles/cmTC_0adeb.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-OyRxkH/src.cxx
+        Linking CXX executable cmTC_0adeb
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0adeb.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_0adeb.dir/src.cxx.o -o cmTC_0adeb
+        
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:233 (cxx_feature_check)"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "COMPILE_HAVE_THREAD_SAFETY_ATTRIBUTES"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fe36b/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_fe36b.dir/build.make CMakeFiles/cmTC_fe36b.dir/build
+        Building CXX object CMakeFiles/cmTC_fe36b.dir/thread_safety_attributes.cpp.o
+        /usr/bin/clang++  -I/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/include -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -std=c++11 -arch arm64 -MD -MT CMakeFiles/cmTC_fe36b.dir/thread_safety_attributes.cpp.o -MF CMakeFiles/cmTC_fe36b.dir/thread_safety_attributes.cpp.o.d -o CMakeFiles/cmTC_fe36b.dir/thread_safety_attributes.cpp.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/thread_safety_attributes.cpp
+        Linking CXX executable cmTC_fe36b
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fe36b.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_fe36b.dir/thread_safety_attributes.cpp.o -o cmTC_fe36b
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_THREAD_SAFETY_ATTRIBUTES"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckCompilerFlag.cmake:18 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXCompilerFlag.cmake:103 (cmake_check_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/cmake/AddCXXCompilerFlag.cmake:34 (check_cxx_compiler_flag)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:282 (add_cxx_compiler_flag)"
+    checks:
+      - "Performing Test HAVE_CXX_FLAG_COVERAGE"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-dXgVmr"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-dXgVmr"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "HAVE_CXX_FLAG_COVERAGE"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-dXgVmr'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_a3ed0/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_a3ed0.dir/build.make CMakeFiles/cmTC_a3ed0.dir/build
+        Building CXX object CMakeFiles/cmTC_a3ed0.dir/src.cxx.o
+        /usr/bin/clang++ -DHAVE_CXX_FLAG_COVERAGE  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  --coverage -std=c++17 -arch arm64   --coverage -MD -MT CMakeFiles/cmTC_a3ed0.dir/src.cxx.o -MF CMakeFiles/cmTC_a3ed0.dir/src.cxx.o.d -o CMakeFiles/cmTC_a3ed0.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-dXgVmr/src.cxx
+        Linking CXX executable cmTC_a3ed0
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a3ed0.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  --coverage -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_a3ed0.dir/src.cxx.o -o cmTC_a3ed0
+        
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:312 (cxx_feature_check)"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "COMPILE_HAVE_STD_REGEX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fbf8c/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_fbf8c.dir/build.make CMakeFiles/cmTC_fbf8c.dir/build
+        Building CXX object CMakeFiles/cmTC_fbf8c.dir/std_regex.cpp.o
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -std=c++11 -arch arm64 -MD -MT CMakeFiles/cmTC_fbf8c.dir/std_regex.cpp.o -MF CMakeFiles/cmTC_fbf8c.dir/std_regex.cpp.o.d -o CMakeFiles/cmTC_fbf8c.dir/std_regex.cpp.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/std_regex.cpp
+        Linking CXX executable cmTC_fbf8c
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fbf8c.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_fbf8c.dir/std_regex.cpp.o -o cmTC_fbf8c
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_STD_REGEX"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:313 (cxx_feature_check)"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "COMPILE_HAVE_GNU_POSIX_REGEX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_af76e/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_af76e.dir/build.make CMakeFiles/cmTC_af76e.dir/build
+        Building CXX object CMakeFiles/cmTC_af76e.dir/gnu_posix_regex.cpp.o
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -std=c++11 -arch arm64 -MD -MT CMakeFiles/cmTC_af76e.dir/gnu_posix_regex.cpp.o -MF CMakeFiles/cmTC_af76e.dir/gnu_posix_regex.cpp.o.d -o CMakeFiles/cmTC_af76e.dir/gnu_posix_regex.cpp.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/gnu_posix_regex.cpp
+        /Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/gnu_posix_regex.cpp:1:10: fatal error: 'gnuregex.h' file not found
+            1 | #include <gnuregex.h>
+              |          ^~~~~~~~~~~~
+        1 error generated.
+        make[1]: *** [CMakeFiles/cmTC_af76e.dir/gnu_posix_regex.cpp.o] Error 1
+        make: *** [cmTC_af76e/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "RUN_HAVE_GNU_POSIX_REGEX"
+      cached: true
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:314 (cxx_feature_check)"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "COMPILE_HAVE_POSIX_REGEX"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_35374/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_35374.dir/build.make CMakeFiles/cmTC_35374.dir/build
+        Building CXX object CMakeFiles/cmTC_35374.dir/posix_regex.cpp.o
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -std=c++11 -arch arm64 -MD -MT CMakeFiles/cmTC_35374.dir/posix_regex.cpp.o -MF CMakeFiles/cmTC_35374.dir/posix_regex.cpp.o.d -o CMakeFiles/cmTC_35374.dir/posix_regex.cpp.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/posix_regex.cpp
+        Linking CXX executable cmTC_35374
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35374.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_35374.dir/posix_regex.cpp.o -o cmTC_35374
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_POSIX_REGEX"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:323 (cxx_feature_check)"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "COMPILE_HAVE_STEADY_CLOCK"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_4a462/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_4a462.dir/build.make CMakeFiles/cmTC_4a462.dir/build
+        Building CXX object CMakeFiles/cmTC_4a462.dir/steady_clock.cpp.o
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -std=c++11 -arch arm64 -MD -MT CMakeFiles/cmTC_4a462.dir/steady_clock.cpp.o -MF CMakeFiles/cmTC_4a462.dir/steady_clock.cpp.o.d -o CMakeFiles/cmTC_4a462.dir/steady_clock.cpp.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/steady_clock.cpp
+        Linking CXX executable cmTC_4a462
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4a462.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_4a462.dir/steady_clock.cpp.o -o cmTC_4a462
+        
+      exitCode: 0
+    runResult:
+      variable: "RUN_HAVE_STEADY_CLOCK"
+      cached: true
+      stdout: |
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/opt/homebrew/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:104 (try_compile)"
+      - "/opt/homebrew/share/cmake/Modules/CheckCXXSourceCompiles.cmake:103 (cmake_check_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:99 (check_cxx_source_compiles)"
+      - "/opt/homebrew/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:326 (find_package)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-GjSpHu"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-GjSpHu"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-GjSpHu'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_fad63/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_fad63.dir/build.make CMakeFiles/cmTC_fad63.dir/build
+        Building CXX object CMakeFiles/cmTC_fad63.dir/src.cxx.o
+        /usr/bin/clang++ -DCMAKE_HAVE_LIBC_PTHREAD  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -std=c++17 -arch arm64 -MD -MT CMakeFiles/cmTC_fad63.dir/src.cxx.o -MF CMakeFiles/cmTC_fad63.dir/src.cxx.o.d -o CMakeFiles/cmTC_fad63.dir/src.cxx.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeScratch/TryCompile-GjSpHu/src.cxx
+        Linking CXX executable cmTC_fad63
+        /opt/homebrew/bin/cmake -E cmake_link_script CMakeFiles/cmTC_fad63.dir/link.txt --verbose=1
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/cmTC_fad63.dir/src.cxx.o -o cmTC_fad63
+        
+      exitCode: 0
+  -
+    kind: "try_run-v1"
+    backtrace:
+      - "build/_deps/googlebenchmark-src/cmake/CXXFeatureCheck.cmake:57 (try_run)"
+      - "build/_deps/googlebenchmark-src/CMakeLists.txt:327 (cxx_feature_check)"
+    directories:
+      source: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+      binary: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "  -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety"
+      CMAKE_CXX_FLAGS_DEBUG: "-g"
+      CMAKE_EXE_LINKER_FLAGS: ""
+      CMAKE_MODULE_PATH: "/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/Modules;/Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake"
+      CMAKE_OSX_ARCHITECTURES: ""
+      CMAKE_OSX_DEPLOYMENT_TARGET: ""
+      CMAKE_OSX_SYSROOT: ""
+    buildResult:
+      variable: "COMPILE_HAVE_PTHREAD_AFFINITY"
+      cached: true
+      stdout: |
+        Change Dir: '/Users/michaelspeckhart/Developer/Projects/StrataDB/build/CMakeFiles/CMakeTmp'
+        
+        Run Build Command(s): /opt/homebrew/bin/cmake -E env VERBOSE=1 /usr/bin/make -f Makefile cmTC_5af56/fast
+        /Library/Developer/CommandLineTools/usr/bin/make  -f CMakeFiles/cmTC_5af56.dir/build.make CMakeFiles/cmTC_5af56.dir/build
+        Building CXX object CMakeFiles/cmTC_5af56.dir/pthread_affinity.cpp.o
+        /usr/bin/clang++   -Wall  -Wextra  -Wshadow  -Wfloat-equal  -Wold-style-cast  -Wconversion  -Werror  -Wsuggest-override  -pedantic  -pedantic-errors  -Wshorten-64-to-32  -fstrict-aliasing  -Wno-deprecated-declarations  -Wno-deprecated  -Wstrict-aliasing  -Wthread-safety  -std=c++11 -arch arm64 -MD -MT CMakeFiles/cmTC_5af56.dir/pthread_affinity.cpp.o -MF CMakeFiles/cmTC_5af56.dir/pthread_affinity.cpp.o.d -o CMakeFiles/cmTC_5af56.dir/pthread_affinity.cpp.o -c /Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/pthread_affinity.cpp
+        /Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/pthread_affinity.cpp:3:3: error: unknown type name 'cpu_set_t'
+            3 |   cpu_set_t set;
+              |   ^
+        /Users/michaelspeckhart/Developer/Projects/StrataDB/build/_deps/googlebenchmark-src/cmake/pthread_affinity.cpp:5:23: error: use of undeclared identifier 'CPU_SETSIZE'
+            5 |   for (int i = 0; i < CPU_SETSIZE; ++i) {
+              |                       ^
+        2 errors generated.
+        make[1]: *** [CMakeFiles/cmTC_5af56.dir/pthread_affinity.cpp.o] Error 1
+        make: *** [cmTC_5af56/fast] Error 2
+        
+      exitCode: 2
+    runResult:
+      variable: "RUN_HAVE_PTHREAD_AFFINITY"
+      cached: true
+...

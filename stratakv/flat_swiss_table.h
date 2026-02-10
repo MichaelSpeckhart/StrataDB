@@ -10,7 +10,6 @@
 
 #include <arm_neon.h>
 
-#define STRATAKV_DEBUG_ALLOCATIONS
 
 static constexpr double LOAD_FACTOR = 0.9;
 
@@ -50,6 +49,7 @@ struct alignas(128) FlatSwissTableShardStats
 
 
 
+
 template <typename key_type, typename value_type, typename allocator_type>
 requires (std::is_trivially_copyable_v<key_type> && std::is_trivially_copyable_v<value_type>
 && std::is_trivially_destructible_v<key_type> && std::is_trivially_destructible_v<value_type>)
@@ -63,17 +63,14 @@ class FlatTable
         #ifdef STRATAKV_DEBUG_ALLOCATIONS
         std::cout << "FlatSwissTable Constructor: Initializing with Capacity: " << capacity << ", Num Shards: " << num_shards << std::endl;
         #endif
+        capacity_ = (capacity + GROUP_WIDTH - 1) & ~(GROUP_WIDTH - 1);
+        groups_ = static_cast<Group*>(
+        allocator_->allocate(num_groups_ * sizeof(Group), 128)
+        );
+        if (!groups_) throw std::bad_alloc();
 
-        size_t hot_bytes = capacity * (sizeof(key_type) + sizeof(ctrl_t));
-        
-        void* hot_block = allocator_->allocate(hot_bytes, 128);
-
-        if (hot_block == nullptr) 
-        {
-            #ifdef STRATAKV_DEBUG_ALLOCATIONS
-            std::cerr << "FlatSwissTable Hot Block Allocation Failed for " << hot_bytes << " bytes." << std::endl;
-            #endif
-            throw std::bad_alloc();
+        for (std::size_t i = 0; i < num_groups_; i++) {
+            memset(groups_[i].ctrl, CTRL_EMPTY, 16);
         }
 
         // Debug Macro
@@ -81,9 +78,6 @@ class FlatTable
         std::cout << "Capacity passed in: " << capacity << std::endl;
         std::cout << "FlatSwissTable Hot Block Allocation: " << hot_bytes << " bytes at " << hot_block << std::endl;
         #endif
-
-        ctrl_ = static_cast<ctrl_t*>(hot_block);
-        keys_ = reinterpret_cast<key_type*>(reinterpret_cast<std::byte*>(static_cast<std::byte*>(hot_block) + capacity * sizeof(ctrl_t)));
 
         values_ = reinterpret_cast<value_type*>(allocator_->allocate(capacity * sizeof(value_type), 128));
         if (values_ == nullptr) {
@@ -166,15 +160,18 @@ class FlatTable
         std::size_t hash = std::hash<key_type>{}(key);
         std::size_t idx = hash & (capacity_ - 1);
         ctrl_t h2 = static_cast<ctrl_t>((hash >> 57) & 0x7F);
+        size_t group_idx = (hash & (capacity_ - 1)) / GROUP_WIDTH;
+
+        
 
         while (true) {
             // SIMD instructions to get a group of ctrl bytes
-
+            Group& group = groups_[group_idx];
             // [\0, \0,\0,\0,\0,\0,\0,\0,\0,\0,\0,\0,\0,\0,\0,\0]
 
             // So we should pass in the address of ctrl_[idx] to load the 16 bytes starting from there
             // Little Endian assumption for vec comparison
-            
+            uint16x8_t group_vec = vld1q_u8(group.ctrl); // Load first 8 ctrl bytes
             
 
             ctrl_t c = ctrl_[idx];
@@ -327,8 +324,15 @@ class FlatTable
 
     private:
 
+    struct alignas(128) Group {
+        ctrl_t ctrl[GROUP_WIDTH];
+        key_type keys[GROUP_WIDTH];
+    };
+
 
     allocator_type* allocator_;
+
+    Group* groups_ = nullptr;
 
     // Hot Data
     key_type* keys_     = nullptr;

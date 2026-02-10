@@ -19,7 +19,6 @@
 #ifndef STRATAKV_ARENA_ALLOCATOR_H
 #define STRATAKV_ARENA_ALLOCATOR_H
 
-#define STRATAKV_DEBUG_ALLOCATIONS
 
 namespace stratakv {
 
